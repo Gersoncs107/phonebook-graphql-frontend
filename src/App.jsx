@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div>
-      {result.data.allPersons.map(p => p.name).join(', ')}
+      <Persons persons={result.data.allPersons} />
     </div>
   )
 }
