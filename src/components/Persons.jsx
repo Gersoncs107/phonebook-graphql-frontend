@@ -2,6 +2,20 @@ import {useState} from 'react'
 import {gql} from '@apollo/client'
 import {useQuery} from '@apollo/client/react'
 
+const FIND_PERSON = gql`
+  query findPersonByName($nameToSearch: String!) {
+    findPerson(name: $nameToSearch) {
+      name
+      phone
+      id
+      address {
+        street
+        city
+      }
+    }
+  }
+`
+
 const Persons = ({ persons }) => {
   return (
     <div>
