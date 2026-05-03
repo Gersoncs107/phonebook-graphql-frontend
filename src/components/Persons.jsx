@@ -1,6 +1,6 @@
-import {useState} from 'react'
-import {gql} from '@apollo/client'
-import {useQuery} from '@apollo/client/react'
+import { useState } from 'react'
+import { gql } from '@apollo/client'
+import { useQuery } from '@apollo/client/react'
 
 const FIND_PERSON = gql`
   query findPersonByName($nameToSearch: String!) {
@@ -47,6 +47,21 @@ const Persons = ({ persons }) => {
       />
     )
   }
-} 
+  // highlight-end
+
+  return (
+    <div>
+      <h2>Persons</h2>
+      {persons.map((p) => (
+        <div key={p.id}>
+          {p.name} {p.phone}
+          <button onClick={() => setNameToSearch(p.name)}> // highlight-line
+            show address // highlight-line
+          </button> // highlight-line
+        </div>
+      ))}
+    </div>
+  )
+}
 
 export default Persons
