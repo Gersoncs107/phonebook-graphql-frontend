@@ -1,3 +1,7 @@
+import {useState} from 'react'
+import {gql} from '@apollo/client'
+import {useQuery} from '@apollo/client/react'
+
 const Persons = ({ persons }) => {
   return (
     <div>
