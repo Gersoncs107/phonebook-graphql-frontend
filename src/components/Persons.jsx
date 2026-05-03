@@ -30,15 +30,13 @@ const Person = ({ person, onClose }) => {
 }
 
 const Persons = ({ persons }) => {
-  // highlight-start
+
   const [nameToSearch, setNameToSearch] = useState(null)
   const result = useQuery(FIND_PERSON, {
     variables: { nameToSearch },
     skip: !nameToSearch,
   })
-  // highlight-end
 
-  // highlight-start
   if (nameToSearch && result.data) {
     return (
       <Person
@@ -47,7 +45,6 @@ const Persons = ({ persons }) => {
       />
     )
   }
-  // highlight-end
 
   return (
     <div>
@@ -55,9 +52,9 @@ const Persons = ({ persons }) => {
       {persons.map((p) => (
         <div key={p.id}>
           {p.name} {p.phone}
-          <button onClick={() => setNameToSearch(p.name)}> // highlight-line
-            show address // highlight-line
-          </button> // highlight-line
+          <button onClick={() => setNameToSearch(p.name)}>
+            show address
+          </button>
         </div>
       ))}
     </div>
