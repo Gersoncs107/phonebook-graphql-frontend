@@ -29,4 +29,24 @@ const Person = ({ person, onClose }) => {
   )
 }
 
+const Persons = ({ persons }) => {
+  // highlight-start
+  const [nameToSearch, setNameToSearch] = useState(null)
+  const result = useQuery(FIND_PERSON, {
+    variables: { nameToSearch },
+    skip: !nameToSearch,
+  })
+  // highlight-end
+
+  // highlight-start
+  if (nameToSearch && result.data) {
+    return (
+      <Person
+        person={result.data.findPerson}
+        onClose={() => setNameToSearch(null)}
+      />
+    )
+  }
+} 
+
 export default Persons
