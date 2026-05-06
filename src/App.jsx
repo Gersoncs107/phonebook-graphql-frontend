@@ -23,6 +23,7 @@ const App = () => {
   return (
     <div>
       <Persons persons={result.data.allPersons} />
+      <PersonForm />
     </div>
   )
 }
