@@ -1,13 +1,12 @@
 import { useQuery } from '@apollo/client/react'
 import { useState } from 'react'
+import Notify from './components/Notify'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
-import Notify from './components/Notify'
 import { ALL_PERSONS } from './queries'
 
 const App = () => {
-  const [ errorMessage, setErrorMessage ] = useState(null)
-
+  const [errorMessage, setErrorMessage] = useState(null)
   const result = useQuery(ALL_PERSONS)
 
   if (result.loading) {
@@ -23,7 +22,7 @@ const App = () => {
 
   return (
     <div>
-      <Notify message={errorMessage} />
+      <Notify errorMessage={errorMessage} />
       <Persons persons={result.data.allPersons} />
       <PersonForm setError={notify} />
     </div>
