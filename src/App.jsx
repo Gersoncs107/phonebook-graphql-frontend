@@ -13,6 +13,13 @@ const App = () => {
     return <div>loading...</div>
   }
 
+  const notify = (message) => {
+    setErrorMessage(message)
+    setTimeout(() => {
+      setErrorMessage(null)
+    }, 10000)
+  }
+
   return (
     <div>
       <Persons persons={result.data.allPersons} />
