@@ -28,11 +28,11 @@ const PersonForm = () => {
   const [street, setStreet] = useState('')
   const [city, setCity] = useState('')
 
-  const [createPerson] = useMutation(CREATE_PERSON, {
-    refetchQueries: [
-      { query: ALL_PERSONS }
-    ]
+    const [ createPerson ] = useMutation(CREATE_PERSON, {
+    refetchQueries: [  {query: ALL_PERSONS } ],
+    onError: (error) => setError(error.message), // highlight-line
   })
+
 
   const submit = (event) => {
     event.preventDefault()
