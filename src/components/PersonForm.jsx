@@ -32,7 +32,6 @@ const PersonForm = () => {
   const submit = (event) => {
     event.preventDefault()
 
-    // highlight-start
     createPerson({ variables: { name, phone, street, city } })
     // highlight-end
 
