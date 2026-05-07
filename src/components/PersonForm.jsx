@@ -27,7 +27,7 @@ const PersonForm = () => {
   const [street, setStreet] = useState('')
   const [city, setCity] = useState('')
 
-  const [createPerson] = useMutation(CREATE_PERSON) // highlight-line
+  const [createPerson] = useMutation(CREATE_PERSON)
 
   const submit = (event) => {
     event.preventDefault()
