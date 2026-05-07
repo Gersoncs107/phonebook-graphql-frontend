@@ -33,7 +33,6 @@ const PersonForm = () => {
     event.preventDefault()
 
     createPerson({ variables: { name, phone, street, city } })
-    // highlight-end
 
     setName('')
     setPhone('')
