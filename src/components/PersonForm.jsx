@@ -30,7 +30,7 @@ const PersonForm = () => {
 
     const [ createPerson ] = useMutation(CREATE_PERSON, {
     refetchQueries: [  {query: ALL_PERSONS } ],
-    onError: (error) => setError(error.message), // highlight-line
+    onError: (error) => setError(error.message),
   })
 
 
