@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client/react'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
+import Notify from './components/Notify'
 import { ALL_PERSONS } from './queries'
 
 const App = () => {
