@@ -27,7 +27,9 @@ const PersonForm = () => {
   const [street, setStreet] = useState('')
   const [city, setCity] = useState('')
 
-  const [createPerson] = useMutation(CREATE_PERSON)
+  const [createPerson] = useMutation(CREATE_PERSON, {
+    refetchQueries
+  })
 
   const submit = (event) => {
     event.preventDefault()
