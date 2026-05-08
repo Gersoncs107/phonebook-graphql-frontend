@@ -22,7 +22,7 @@ const CREATE_PERSON = gql`
   }
 `
 
-const PersonForm = () => {
+const PersonForm = ({ setError }) => {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [street, setStreet] = useState('')
