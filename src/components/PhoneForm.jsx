@@ -39,3 +39,5 @@ const PhoneForm = () => {
     </div>
     )
 }
+
+export default PhoneForm
