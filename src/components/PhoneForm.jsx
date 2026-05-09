@@ -7,4 +7,10 @@ const PhoneForm = () => {
    const [phone, setPhone] = useState("");
 
    const changeNumber = useMutation(EDIT_NUMBER);
+
+    const submit = (event) => {
+        event.preventDefault();
+
+        changeNumber({ variables: { name, phone } });
+    }
 }
