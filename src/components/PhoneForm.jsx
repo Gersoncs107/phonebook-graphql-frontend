@@ -12,5 +12,8 @@ const PhoneForm = () => {
         event.preventDefault();
 
         changeNumber({ variables: { name, phone } });
+
+        setName("");
+        setPhone("");
     }
 }
