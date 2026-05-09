@@ -48,4 +48,11 @@ export const EDIT_NUMBER = gql`
     editNumber(name: $name, phone: $phone) {
       name
       phone
-      id  
+      address {
+        street
+        city
+      }
+      id
+    }
+  }
+`
