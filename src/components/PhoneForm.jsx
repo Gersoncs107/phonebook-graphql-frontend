@@ -9,7 +9,7 @@ const PhoneForm = () => {
    const [changeNumber] = useMutation(EDIT_NUMBER, {
         onCompleted: (data) => {
             if (!data.editNumber) {
-                alert("person not found");
+                setError("person not found");
             }
         }
    });
