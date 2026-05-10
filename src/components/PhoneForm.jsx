@@ -6,7 +6,13 @@ const PhoneForm = () => {
    const [name, setName] = useState("");
    const [phone, setPhone] = useState("");
 
-   const [changeNumber] = useMutation(EDIT_NUMBER);
+   const [changeNumber] = useMutation(EDIT_NUMBER, {
+        onCompleted: (data) => {
+            if (!data.editNumber) {
+                alert("person not found");
+            }
+        }
+   });
 
     const submit = (event) => {
         event.preventDefault();
