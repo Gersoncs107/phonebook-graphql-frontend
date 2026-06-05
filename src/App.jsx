@@ -12,6 +12,7 @@ const App = () => {
   const [token, setToken] = useState(localStorage.getItem('phonebook-user-token'))
   const [errorMessage, setErrorMessage] = useState(null)
   const result = useQuery(ALL_PERSONS)
+  const client = useApolloClient()
 
   if (result.loading) {
     return <div>loading...</div>
