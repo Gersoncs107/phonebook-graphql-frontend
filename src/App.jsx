@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client/react'
 import { useState } from 'react'
+import { useApolloClient, useQuery } from '@apollo/client/react'
 import LoginForm from './components/LoginForm'
 import Notify from './components/Notify'
 import PersonForm from './components/PersonForm'
@@ -21,6 +22,15 @@ const App = () => {
     setTimeout(() => {
       setErrorMessage(null)
     }, 10000)
+  }
+
+  if (!token) {
+    return (
+      <div>
+        <Notify errorMessage={errorMessage} />
+        <LoginForm setError={notify} setToken={setToken} />
+      </div>
+    )
   }
 
   return (
