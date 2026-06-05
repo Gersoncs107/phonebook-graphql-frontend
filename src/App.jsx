@@ -18,6 +18,12 @@ const App = () => {
     return <div>loading...</div>
   }
 
+  const onLogout = () => {
+    setToken(null)
+    localStorage.clear()
+    client.resetStore()
+  }
+
   const notify = (message) => {
     setErrorMessage(message)
     setTimeout(() => {
