@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client/react'
 import { useState } from 'react'
+import LoginForm from './components/LoginForm'
 import Notify from './components/Notify'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
