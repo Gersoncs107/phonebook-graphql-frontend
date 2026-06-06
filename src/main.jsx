@@ -2,10 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 
-import { ApolloClient, gql, HttpLink, InMemoryCache } from '@apollo/client'
-import {ApolloProvider} from '@apollo/client/react'
-import {SetContextLink } from '@apollo/client/link/context'
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
+import { ApolloProvider } from '@apollo/client/react'
+import { SetContextLink } from '@apollo/client/link/context' // highlight-line
 
+// highlight-start
 const authLink  = new SetContextLink(({ headers }) => {
   const token = localStorage.getItem('phonebook-user-token')
   return {
@@ -15,13 +16,16 @@ const authLink  = new SetContextLink(({ headers }) => {
     }
   }
 })
+// highlight-end
 
-const httpLink = new HttpLink({ uri: 'http://localhost:4000' })
+const httpLink = new HttpLink({ uri: 'http://localhost:4000' }) // highlight-line
 
+// highlight-start
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
+  link: authLink.concat(httpLink)
 })
+// highlight-end
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
