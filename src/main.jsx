@@ -15,7 +15,6 @@ const authLink  = new SetContextLink(({ headers }) => {
     }
   }
 })
-// highlight-end
 
 const httpLink = new HttpLink({ uri: 'http://localhost:4000' }) // highlight-line
 
@@ -23,7 +22,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: authLink.concat(httpLink)
 })
-// highlight-end
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
