@@ -14,7 +14,7 @@ const PhoneForm = ({setError}) => {
         }
    });
 
-    const submit = (event) => {
+    const submit = async (event) => {
         event.preventDefault();
 
          try {
