@@ -28,7 +28,6 @@ export const ALL_PERSONS = gql`
       id
     }
   }
-  ${PERSON_DETAILS}
 `
 
 export const FIND_PERSON = gql`
