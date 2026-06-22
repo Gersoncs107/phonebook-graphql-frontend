@@ -23,7 +23,9 @@ export const LOGIN = gql`
 export const ALL_PERSONS = gql`
   query {
     allPersons {
-      ...PersonDetails
+      name
+      phone
+      id
     }
   }
 `
