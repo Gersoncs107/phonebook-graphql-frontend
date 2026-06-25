@@ -35,6 +35,7 @@ export const FIND_PERSON = gql`
       ...PersonDetails
     }
   }
+  
   ${PERSON_DETAILS}
 `
 
