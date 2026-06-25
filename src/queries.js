@@ -23,11 +23,10 @@ export const LOGIN = gql`
 export const ALL_PERSONS = gql`
   query {
     allPersons {
-      name
-      phone
-      id
+      ...PersonDetails
     }
   }
+  
 `
 
 export const FIND_PERSON = gql`
