@@ -26,7 +26,7 @@ export const ALL_PERSONS = gql`
       ...PersonDetails
     }
   }
-  
+  ${PERSON_DETAILS}
 `
 
 export const FIND_PERSON = gql`
