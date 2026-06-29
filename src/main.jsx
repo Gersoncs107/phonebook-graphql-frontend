@@ -6,6 +6,10 @@ import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from '@apollo/clien
 import { ApolloProvider } from '@apollo/client/react'
 import { SetContextLink } from '@apollo/client/link/context'
 
+import { GraphQLWsLink } from '@apollo/client/link/subscriptions'
+import { getMainDefinition } from '@apollo/client/utilities'
+import { createClient } from 'graphql-ws'
+
 const authLink  = new SetContextLink(({ headers }) => {
   const token = localStorage.getItem('phonebook-user-token')
   return {
