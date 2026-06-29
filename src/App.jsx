@@ -5,7 +5,7 @@ import Notify from './components/Notify'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
 import PhoneForm from './components/PhoneForm'
-import { ALL_PERSONS } from './queries'
+import { ALL_PERSONS, PERSON_ADDED } from './queries'
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('phonebook-user-token'))
