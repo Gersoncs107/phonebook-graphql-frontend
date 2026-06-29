@@ -13,6 +13,12 @@ const App = () => {
   const result = useQuery(ALL_PERSONS)
   const client = useApolloClient()
 
+  useSubscription(PERSON_ADDED, {
+    onData: ({ data }) => {
+      console.log(data)
+    },
+  })
+
   if (result.loading) {
     return <div>loading...</div>
   }
