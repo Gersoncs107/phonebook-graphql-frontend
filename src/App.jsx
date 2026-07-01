@@ -18,6 +18,7 @@ const App = () => {
     onData: ({ data }) => {
       const addedPerson = data.data.personAdded
       notify(`${addedPerson.name} added`)
+      addPersonToCache(client.cache, addedPerson)
     },
   })
 
