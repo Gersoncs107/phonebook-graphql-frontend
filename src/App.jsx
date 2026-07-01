@@ -15,7 +15,7 @@ const App = () => {
 
   useSubscription(PERSON_ADDED, {
     onData: ({ data }) => {
-      console.log(data)
+      const addedPerson = data.data.personAdded
     },
   })
 
