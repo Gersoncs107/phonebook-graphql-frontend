@@ -31,11 +31,8 @@ const PersonForm = ({ setError }) => {
   const [createPerson] = useMutation(CREATE_PERSON, {
     onError: (error) => setError(error.message),
     update: (cache, response) => {
-      cache.updateQuery({ query: ALL_PERSONS }, ({ allPersons }) => {
-        return {
-          allPersons: allPersons.concat(response.data.addPerson)
-        }
-      })
+      const addedPerson = response.data.addPerson
+      addPersonToCache(cache, addedPerson)
     }
   })
 
